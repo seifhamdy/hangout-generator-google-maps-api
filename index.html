@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/9432a27ac8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/index.js"></script>
+    <title>Hangout Generator</title>
+  </head>
+  <body>
+    <section class="desc">
+      <h1>Simple Hangout Generator with Google Maps</h1>
+      <h3>
+        You ever get tired of your girlfriend or wife not knowing where she
+        wants to go? <br />
+        Same. <br />
+        I built this little thing in order to solve that problem. (and for my portfolio)
+      </h3>
+    </section>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK-cMbRGlKjjpe_o9KQaRBAhc8GzDExsk&libraries=places&callback=initMap"
+      async
+      defer
+    ></script>
+    <div class="malooka">
+      <button
+        type="button"
+        style="font-family: inherit"
+        id="location"
+        onclick="showDiv()"
+      >
+        <span class="button_top">Pick Location</span>
+      </button>
+      <button
+        type="button"
+        style="font-family: inherit"
+        id="controlButton"
+        onclick="showControls()"
+      >
+        <span class="button_top">Search Controls</span>
+      </button>
+      <div id="controls">
+        <label for="radiusInput">Search Radius (in meters):</label>
+        <input type="number" id="radiusInput" value="10000" />
+
+        <label>Minimum Rating:</label>
+        <fieldset class="rate">
+          <input type="radio" id="rating10" name="rating" value="5" /><label
+            for="rating10"
+          ></label>
+          <input type="radio" id="rating9" name="rating" value="4.5" /><label
+            class="half"
+            for="rating9"
+          ></label>
+          <input type="radio" id="rating8" name="rating" value="4" /><label
+            for="rating8"
+          ></label>
+          <input type="radio" id="rating7" name="rating" value="3.5" /><label
+            class="half"
+            for="rating7"
+          ></label>
+          <input type="radio" id="rating6" name="rating" value="3" /><label
+            for="rating6"
+            title="3 stars"
+          ></label>
+          <input type="radio" id="rating5" name="rating" value="2.5" /><label
+            class="half"
+            for="rating5"
+          ></label>
+          <input type="radio" id="rating4" name="rating" value="2" /><label
+            for="rating4"
+          ></label>
+          <input type="radio" id="rating3" name="rating" value="1.5" /><label
+            class="half"
+            for="rating3"
+          ></label>
+          <input type="radio" id="rating2" name="rating" value="1" /><label
+            for="rating2"
+          ></label>
+          <input type="radio" id="rating1" name="rating" value="0.5" /><label
+            class="half"
+            for="rating1"
+          ></label>
+          <input type="radio" id="rating0" name="rating" value="0" /><label
+            for="rating0"
+          ></label>
+        </fieldset>
+
+        <label for="categorySelect">Place Category:</label>
+        <select id="categorySelect">
+          <option value="any">Any</option>
+          <option value="amusement_park">Amusement Park</option>
+          <option value="aquarium">Aquarium</option>
+          <option value="art_gallery">Art Gallery</option>
+          <option value="bakery">Bakery</option>
+          <option value="bar">Bar</option>
+          <option value="bowling_alley">Bowling Alley</option>
+          <option value="cafe">Cafe</option>
+          <option value="casino">Casino</option>
+          <option value="library">Library</option>
+          <option value="meal_takeaway">Takeaway</option>
+          <option value="movie_theater">Movie Theater</option>
+          <option value="museum">Museum</option>
+          <option value="night_club">Nightclub</option>
+          <option value="park">Park</option>
+          <option value="restaurant">Restaurant</option>
+          <option value="shopping_mall">Shopping Mall</option>
+          <option value="tourist_attraction">Tourist Attraction</option>
+          <option value="spa">Spa</option>
+          <option value="zoo">Zoo</option>
+          <!-- Add more options for different place categories -->
+        </select>
+        <p>Only show open places:</p>
+        <label for="workingHoursCheckbox" class="checkbox_container">
+          <input type="checkbox" id="workingHoursCheckbox" />
+          <div class="checkmark"></div>
+        </label>
+      </div>
+
+      <div id="map-container" style="width: 500px; height: 300px">
+        <input
+          type="text"
+          id="addressInput"
+          placeholder="Search an address..."
+          name="text"
+        />
+        <div id="map" style="width: 500px; height: 250px"></div>
+      </div>
+    </div>
+    <div id="randomPlace">
+      <button type="button" style="font-family: inherit" id="submit">
+        <span class="button_top">Find</span>
+      </button>
+      <div id="placeCard" style="display: none"></div>
+      <div id="placeMap" style="display: none"></div>
+    </div>
+    <h3 class="usage">Click "Pick Location" then anywhere on the map to pick a location, or
+      search for an address instead. <br />
+      Modify some options from the "Search Controls" button. <br />
+      Click "Find" to get a random location to go to.</h3>
+  </body>
+</html>
