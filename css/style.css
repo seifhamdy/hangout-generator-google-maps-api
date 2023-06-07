@@ -94,6 +94,17 @@ button:active .button_top {
   row-gap: 10px;
 }
 
+#map-container {
+  height: 50vh;
+  flex-direction: column;
+  width: 40vw;
+}
+
+#map {
+  flex: 1;
+  border-radius: inherit;
+}
+
 #categorySelect {
   width: 80%;
 }
@@ -144,6 +155,10 @@ button:active .button_top {
   font-size: 16px;
   color: #555;
   outline: none;
+}
+
+#addressInput {
+  height: 15%;
 }
 
 #radiusInput {
@@ -276,6 +291,16 @@ iframe {
     transform: none;
     width: 100%;
     max-width: none;
+  }
+
+  #map-container {
+    height: 40vh;
+  }
+
+  #randomPlace {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .rate > label:before {

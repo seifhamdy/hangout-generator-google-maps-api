@@ -5,13 +5,13 @@ function showDiv() {
     if (y.style.display === "grid") {
         showControls();
     }
-    if (x.style.display === "block") {
+    if (x.style.display === "flex") {
         x.style.opacity = 0;
         setTimeout(function () {
             x.style.display = "none";
         }, 300);
     } else {
-        x.style.display = "block";
+        x.style.display = "flex";
         setTimeout(function () {
             x.style.opacity = 1;
         }, 10);
@@ -21,7 +21,7 @@ function showDiv() {
 function showControls() {
     var x = document.getElementById("controls");
     var y = document.getElementById("map-container");
-    if (y.style.display === "block") {
+    if (y.style.display === "flex") {
         showDiv();
     }
     if (x.style.display === "grid") {
