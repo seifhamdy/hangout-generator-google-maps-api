@@ -107,6 +107,14 @@ function initMap() {
     });
 }
 function searchPlaces() {
+    var x = document.getElementById("map-container");
+    var y = document.getElementById("controls");
+    if (y.style.display === "grid") {
+        showControls();
+    }
+    if (x.style.display === "flex") {
+        showDiv();
+    }
     // Get the user-selected values from the UI elements
     var radius = parseInt(document.getElementById('radiusInput').value);
     var placeCategory = document.getElementById('categorySelect').value;
