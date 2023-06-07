@@ -1,6 +1,10 @@
 
 function showDiv() {
     var x = document.getElementById("map-container");
+    var y = document.getElementById("controls");
+    if (y.style.display === "grid") {
+        showControls();
+    }
     if (x.style.display === "block") {
         x.style.opacity = 0;
         setTimeout(function () {
@@ -16,6 +20,10 @@ function showDiv() {
 
 function showControls() {
     var x = document.getElementById("controls");
+    var y = document.getElementById("map-container");
+    if (y.style.display === "block") {
+        showDiv();
+    }
     if (x.style.display === "grid") {
         x.style.opacity = 0;
         setTimeout(function () {
