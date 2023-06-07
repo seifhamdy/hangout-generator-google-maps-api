@@ -14,8 +14,8 @@ The idea was to always have an answer to "Where should we go next weekend?".
 
 ## Usage
 
-- Click "Pick Location" then anywhere on the map to place a marker, or search for an address.
-- Click "Search Controls" to modify your search preferences.
+- Click "Toggle Maps" then anywhere on the map to place a marker, or search for an address.
+- Click "Toggle Controls" to modify your search preferences.
 - Click "Find" for a random location.
 
 ***
